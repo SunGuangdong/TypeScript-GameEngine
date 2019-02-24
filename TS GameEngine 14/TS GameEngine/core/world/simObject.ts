@@ -8,7 +8,8 @@
         private _parent: SimObject;
         private _isLoaded: boolean = false;
         private _scene: Scene;
-        private _components: BaseComponent[] = [];
+        //private _components: BaseComponent[] = [];
+        private _components: IComponent[] = [];
         //private _behaviors: IBehavior[] = [];
         //private _isVisible: boolean = true;
 
@@ -113,7 +114,8 @@
             return undefined;
         }
 
-        public addComponent(component: BaseComponent): void {
+        //public addComponent(component: BaseComponent): void {
+        public addComponent(component: IComponent): void {
             this._components.push(component);
             component.setOwner(this);
         }
@@ -137,7 +139,7 @@
 
         public updateReady(): void {
             for (let c of this._components) {
-                c.updateReady();
+                //c.updateReady();
             }
 
             //for (let b of this._behaviors) {

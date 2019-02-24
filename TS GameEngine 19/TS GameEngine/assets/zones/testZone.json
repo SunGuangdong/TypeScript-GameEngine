@@ -1,0 +1,102 @@
+{
+    "name": "TestZone",
+    "description": "A simple test zone for... testing.",
+    "id": 0,
+    "objects": [
+        {
+            "name": "duck",
+            "transform": {
+                "position": {
+                    "x": 100,
+                    "y": 100
+                },
+                "scale": {
+                    "x": 8,
+                    "y": 8
+                }
+            },
+            "components": [
+                {
+                    "name": "duckAnimatedSprite",
+                    "type": "animatedSprite",
+                    "materialName": "duck",
+                    "frameWidth": 17,
+                    "frameHeight": 12,
+                    "frameCount": 3,
+                    "frameSequence": [ 0, 1, 2, 1 ]
+                },
+                {
+                    "name": "duckCollision",
+                    "type": "collision",
+                    "shape": {
+                        "type": "circle",
+                        "radius": 68
+                    }
+                }
+            ],
+            "behaviors": [
+                {
+                    "name": "movementBehavior",
+                    "type": "keyboardMovement",
+                    "speed": 2.5
+                }
+            ]
+        },
+        {
+            "name": "parentObject",
+            "transform": {
+                "position": {
+                    "x": 300,
+                    "y": 300
+                }
+            },
+            "children": [
+                {
+                    "name": "testObject",
+                    "transform": {
+                        "position": {
+                            "x": 120,
+                            "y": 120
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "test",
+                            "type": "sprite",
+                            "materialName": "duck"
+                        }
+                    ],
+                    "behaviors": [
+                        {
+                            "name": "rotateX",
+                            "type": "rotation",
+                            "rotation": {
+                                "z": 0.01
+                            }
+                        }
+                    ]
+                }
+            ],
+            "components": [
+                {
+                    "name": "test",
+                    "type": "sprite",
+                    "materialName": "duck",
+                    "origin": {
+                        "x": 0.5,
+                        "y": 0.5
+                    }
+                }
+            ],
+            "behaviors": [
+                {
+                    "name": "rotateX",
+                    "type": "rotation",
+                    "rotation": {
+                        "z": 0.01
+                    }
+                }
+            ]
+        }
+    ]
+}
